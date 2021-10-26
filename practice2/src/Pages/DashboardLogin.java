@@ -8,25 +8,11 @@ public class DashboardLogin {
 	
 	private static WebElement element = null;
 	
-	public static WebElement testbox_username(WebDriver driver) {
-		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[1]/input"));
-		return element;
-	}
-	
-	public static WebElement testbox_password(WebDriver driver) {
-		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[2]/input"));
-		return element;
-	}
-	
-	public static WebElement button_signin(WebDriver driver) {
-		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[3]/button"));
-		return element;
-	}
+	public static String textbox_uername = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[1]/input";
+	public static String testbox_password = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[2]/input";
+	public static String button_signin = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[3]/button";
 	
 	//used to verify login worked
-	public static WebElement button_inmobly_app(WebDriver driver) {
-		element = driver.findElement(By.xpath("/html/body/app-root/app-navbar/div/ul/li/a"));
-		return element;
-	}
+	public static String button_inmobly_app = "/html/body/app-root/app-navbar/div/ul/li/a";
 
 }

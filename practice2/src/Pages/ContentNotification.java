@@ -13,13 +13,12 @@ public class ContentNotification {
 private static WebElement element = null;
 	
 	public static void login(WebDriver driver) {
-		DashboardLogin.testbox_username(driver).click();
-		DashboardLogin.testbox_username(driver).sendKeys("inmobly-admin");
-		DashboardLogin.testbox_password(driver).click();
-		DashboardLogin.testbox_password(driver).sendKeys("support123456");
-		DashboardLogin.button_signin(driver).click();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		String msg = DashboardLogin.button_inmobly_app(driver).getText();
+		driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
+		driver.findElement(By.xpath(DashboardLogin.textbox_uername)).sendKeys("inmobly-admin");
+		driver.findElement(By.xpath(DashboardLogin.testbox_password)).click();
+		driver.findElement(By.xpath(DashboardLogin.testbox_password)).sendKeys("support123456");
+		driver.findElement(By.xpath(DashboardLogin.button_signin)).click();
+		String msg = driver.findElement(By.xpath(DashboardLogin.button_inmobly_app)).getText();
 		assertEquals(msg, "Inmobly App");
 	}
 	

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
@@ -22,108 +23,86 @@ public class ContentListTest {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://ott.bolt-play.com/login");
+		ContentLists.login(driver);
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.menubutton_content)).click();
+		driver.findElement(By.xpath(ContentLists.menubutton_lists)).click();
 	}
 	
 	//creates then cancels adding list
 	@Test
 	public static void create_new_list_test() {
-		ContentLists.login(driver);
-		ContentLists.button_new_list(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_new_list_name(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.button_new_list)).click();
+		driver.findElement(By.xpath(ContentLists.button_new_list_name)).click();
 		
 		//Renaming the new list to "Alya List"
-		ContentLists.textbox_new_list_name(driver).click();
-		ContentLists.textbox_new_list_name(driver).clear();
-		ContentLists.textbox_new_list_name(driver).sendKeys("Alya List");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_new_list_save_name(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.textbox_new_list_name)).click();
+		driver.findElement(By.xpath(ContentLists.textbox_new_list_name)).clear();
+		driver.findElement(By.xpath(ContentLists.textbox_new_list_name)).sendKeys("Alya List");
+		driver.findElement(By.xpath(ContentLists.button_new_list_save_name)).click();
 	}
 	
 	@Test
 	public static void create_new_list_with_rules_test() {
 		//Add a rule by tag
-		ContentLists.button_new_list_add_rule(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.button_new_list_add_rule)).click();
 		ContentLists.dropdown_select_rule_filter_type(driver, "Tag");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_tag(driver, "business");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.textbox_add_rule_order(driver).click();
-		ContentLists.textbox_add_rule_order(driver).clear();
-		ContentLists.textbox_add_rule_order(driver).sendKeys("1");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_order)).click();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_order)).clear();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_order)).sendKeys("1");
 		ContentLists.dropdown_select_rule_sort_by(driver, "Date");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_direction(driver, "Desc");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_min_year(driver, "1996");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.textbox_add_rule_count(driver).click();
-		ContentLists.textbox_add_rule_count(driver).clear();
-		ContentLists.textbox_add_rule_count(driver).sendKeys("8");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.textbox_add_rule_keywords(driver).click();
-		ContentLists.textbox_add_rule_keywords(driver).clear();
-		ContentLists.textbox_add_rule_keywords(driver).sendKeys("Movie");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_add_rule_save(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_count)).click();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_count)).clear();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_count)).sendKeys("8");
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_keywords)).click();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_keywords)).clear();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_keywords)).sendKeys("Movie");
+		driver.findElement(By.xpath(ContentLists.button_add_rule_save)).click();
+
 		
 		//Add a rule by Category
-		ContentLists.button_new_list_add_rule(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.button_new_list_add_rule)).click();
 		ContentLists.dropdown_select_rule_filter_type(driver, "Category");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_category(driver, "site");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_sort_by(driver, "Date");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_direction(driver, "Desc");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_min_year(driver, "1996");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.textbox_add_rule_count(driver).click();
-		ContentLists.textbox_add_rule_count(driver).clear();
-		ContentLists.textbox_add_rule_count(driver).sendKeys("8");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_add_rule_save(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_count)).click();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_count)).clear();
+		driver.findElement(By.xpath(ContentLists.textbox_add_rule_count)).sendKeys("8");
+		driver.findElement(By.xpath(ContentLists.button_add_rule_save)).click();
+
 		
 		//Add a rule by Series
-		ContentLists.button_new_list_add_rule(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.button_new_list_add_rule)).click();
 		ContentLists.dropdown_select_rule_filter_type(driver, "Series");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		ContentLists.dropdown_select_rule_series(driver, "SUITS");
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_add_rule_save(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.button_add_rule_save)).click();
 	}
 	
-	/*@Test
+	@Test
 	public static void create_new_list_with_videos_test() {
-		ContentLists.login(driver);
-		ContentLists.button_new_list(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_new_list_name(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		driver.findElement(By.xpath(ContentLists.button_new_list_add_video)).click();
+		/*ContentLists.dropdown_add_video_video_type(driver, "Video");
+		ContentLists.dropdown_add_video_keyword_type(driver, "Tag");
+		ContentLists.dropdown_add_video_select_category(driver, "business");
+		driver.findElement(By.xpath(ContentLists.textbox_add_video_keywords)).click();
+		driver.findElement(By.xpath(ContentLists.textbox_add_video_keywords)).clear();
+		driver.findElement(By.xpath(ContentLists.textbox_add_video_keywords)).sendKeys("KMS");
+		driver.findElement(By.xpath(ContentLists.textbox_add_video_filter)).click();*/
 		
-		//Add video to the list
-		ContentLists.button_new_list_add_video(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		ContentLists.button_add_video_cancel(driver).click();
-		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-	}*/
+		ContentLists.button_select_video_from_list(driver, "Once Upon a Time");
+	}
+
 	
 	/*@Test
-	public static void find_profile_Movies_test() {
-		ContentLists.login(driver);
-		ContentLists.menubutton_content(driver);
-		ContentLists.menubutton_lists(driver);
-		ContentLists.find_list(driver, "Feature");
+	public static void find_list_test() {
+		ContentLists.button_view_custom_list(driver, "Feature");
+		driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		ContentLists.button_view_custom_list_edit(driver);
 	}*/
 	
 	@AfterTest
