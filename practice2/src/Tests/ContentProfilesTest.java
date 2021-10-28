@@ -32,15 +32,15 @@ static WebDriver driver = null;
 	/*@Test
 	public static void add_new_profile_test() {
 		driver.findElement(By.xpath(ContentProfiles.button_new_profile)).click();
-		ContentProfiles.add_new_profile(driver, "Profile", "Tester Profile");
-		ContentProfiles.cancel_new_profile(driver, "Profile");
+		ContentProfiles.add_new_profile(driver, "Tester Profile");
+		//ContentProfiles.cancel_new_profile(driver, "Profile");
 	}*/
-	
-	@Test
+			
+	/*@Test
 	public static void edit_profile_test() {
 		ContentProfiles.button_edit_profile(driver, "Sport");
-		ContentProfiles.button_cancel_edit_profile(driver);
-	}
+		ContentProfiles.button_cancel_edit_profile(driver, "Sport");
+	}*/
 	
 	
 	@AfterTest

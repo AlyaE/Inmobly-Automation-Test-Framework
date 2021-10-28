@@ -1,25 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-26T02:41:47 EDT" name="Default suite" finished-at="2021-10-26T02:41:53 EDT" duration-ms="6244">
+  <suite started-at="2021-10-28T02:58:59 EDT" name="Default suite" finished-at="2021-10-28T03:00:05 EDT" duration-ms="65288">
     <groups>
     </groups>
-    <test started-at="2021-10-26T02:41:47 EDT" name="Default test" finished-at="2021-10-26T02:41:53 EDT" duration-ms="6244">
-      <class name="Tests.ContentProfilesTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.ContentProfilesTest@7ce3cb8e]" started-at="2021-10-26T02:41:47 EDT" name="setup" finished-at="2021-10-26T02:41:53 EDT" duration-ms="5702" status="PASS">
+    <test started-at="2021-10-28T02:58:59 EDT" name="Default test" finished-at="2021-10-28T03:00:05 EDT" duration-ms="65288">
+      <class name="UseCaseTests.CreateTemplateMenuTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.CreateTemplateMenuTest@3c419631]" started-at="2021-10-28T02:59:15 EDT" name="setup" finished-at="2021-10-28T02:59:20 EDT" duration-ms="5205" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="edit_profile_test()[pri:0, instance:Tests.ContentProfilesTest@7ce3cb8e]" started-at="2021-10-26T02:41:53 EDT" name="edit_profile_test" finished-at="2021-10-26T02:41:53 EDT" duration-ms="518" status="PASS">
+        <test-method signature="edit_save_cancel_menu_test()[pri:0, instance:UseCaseTests.CreateTemplateMenuTest@3c419631]" started-at="2021-10-28T02:59:50 EDT" name="edit_save_cancel_menu_test" finished-at="2021-10-28T02:59:52 EDT" duration-ms="1154" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- edit_profile_test -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Tests.ContentProfilesTest@7ce3cb8e]" started-at="2021-10-26T02:41:53 EDT" name="teardown" finished-at="2021-10-26T02:41:53 EDT" duration-ms="0" status="PASS">
+        </test-method> <!-- edit_save_cancel_menu_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.CreateTemplateMenuTest@3c419631]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- Tests.ContentProfilesTest -->
+      </class> <!-- UseCaseTests.CreateTemplateMenuTest -->
+      <class name="UseCaseTests.CreateNewSeriesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.CreateNewSeriesTest@e056f20]" started-at="2021-10-28T02:59:05 EDT" name="setup" finished-at="2021-10-28T02:59:10 EDT" duration-ms="5061" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="add_new_series_test()[pri:0, instance:UseCaseTests.CreateNewSeriesTest@e056f20]" started-at="2021-10-28T02:59:52 EDT" name="add_new_series_test" finished-at="2021-10-28T02:59:52 EDT" duration-ms="810" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_new_series_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.CreateNewSeriesTest@e056f20]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.CreateNewSeriesTest -->
+      <class name="UseCaseTests.CreateVideoNotificationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.CreateVideoNotificationTest@4b0b0854]" started-at="2021-10-28T02:59:26 EDT" name="setup" finished-at="2021-10-28T02:59:31 EDT" duration-ms="5332" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="create_new_text_notification_test()[pri:0, instance:UseCaseTests.CreateVideoNotificationTest@4b0b0854]" started-at="2021-10-28T02:59:52 EDT" name="create_new_text_notification_test" finished-at="2021-10-28T02:59:53 EDT" duration-ms="602" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_new_text_notification_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.CreateVideoNotificationTest@4b0b0854]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.CreateVideoNotificationTest -->
+      <class name="UseCaseTests.DasboardLoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.DasboardLoginTest@19bb07ed]" started-at="2021-10-28T02:59:31 EDT" name="setup" finished-at="2021-10-28T02:59:35 EDT" duration-ms="3510" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Login()[pri:0, instance:UseCaseTests.DasboardLoginTest@19bb07ed]" started-at="2021-10-28T02:59:53 EDT" name="Login" finished-at="2021-10-28T02:59:55 EDT" duration-ms="1506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.DasboardLoginTest@19bb07ed]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.DasboardLoginTest -->
+      <class name="UseCaseTests.ViewCustomListTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.ViewCustomListTest@10e41621]" started-at="2021-10-28T02:59:40 EDT" name="setup" finished-at="2021-10-28T02:59:45 EDT" duration-ms="5189" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="find_list_test()[pri:0, instance:UseCaseTests.ViewCustomListTest@10e41621]" started-at="2021-10-28T02:59:55 EDT" name="find_list_test" finished-at="2021-10-28T02:59:55 EDT" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_list_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.ViewCustomListTest@10e41621]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.ViewCustomListTest -->
+      <class name="UseCaseTests.ViewPresetListTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.ViewPresetListTest@353d0772]" started-at="2021-10-28T02:59:45 EDT" name="setup" finished-at="2021-10-28T02:59:50 EDT" duration-ms="5068" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="find_and_edit_list_test()[pri:0, instance:UseCaseTests.ViewPresetListTest@353d0772]" started-at="2021-10-28T02:59:55 EDT" name="find_and_edit_list_test" finished-at="2021-10-28T02:59:55 EDT" duration-ms="478" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_and_edit_list_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.ViewPresetListTest@353d0772]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.ViewPresetListTest -->
+      <class name="UseCaseTests.CreateParentTemplateMenuTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.CreateParentTemplateMenuTest@2667f029]" started-at="2021-10-28T02:59:10 EDT" name="setup" finished-at="2021-10-28T02:59:15 EDT" duration-ms="5186" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="edit_save_cancel_menu_test()[pri:0, instance:UseCaseTests.CreateParentTemplateMenuTest@2667f029]" started-at="2021-10-28T02:59:55 EDT" name="edit_save_cancel_menu_test" finished-at="2021-10-28T02:59:59 EDT" duration-ms="3998" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- edit_save_cancel_menu_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.CreateParentTemplateMenuTest@2667f029]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.CreateParentTemplateMenuTest -->
+      <class name="UseCaseTests.FindAndEditAScreen">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.FindAndEditAScreen@a9cd3b1]" started-at="2021-10-28T02:59:35 EDT" name="setup" finished-at="2021-10-28T02:59:40 EDT" duration-ms="5242" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="find_and_edit_screen_test()[pri:0, instance:UseCaseTests.FindAndEditAScreen@a9cd3b1]" started-at="2021-10-28T02:59:59 EDT" name="find_and_edit_screen_test" finished-at="2021-10-28T03:00:00 EDT" duration-ms="672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_and_edit_screen_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.FindAndEditAScreen@a9cd3b1]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.FindAndEditAScreen -->
+      <class name="UseCaseTests.CreateNewListWithRulesTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.CreateNewListWithRulesTest@13e39c73]" started-at="2021-10-28T02:58:59 EDT" name="setup" finished-at="2021-10-28T02:59:05 EDT" duration-ms="5546" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="create_new_list_test()[pri:0, instance:UseCaseTests.CreateNewListWithRulesTest@13e39c73]" started-at="2021-10-28T03:00:00 EDT" name="create_new_list_test" finished-at="2021-10-28T03:00:00 EDT" duration-ms="480" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_new_list_test -->
+        <test-method signature="create_new_list_with_rules_test()[pri:0, instance:UseCaseTests.CreateNewListWithRulesTest@13e39c73]" started-at="2021-10-28T03:00:00 EDT" name="create_new_list_with_rules_test" finished-at="2021-10-28T03:00:04 EDT" duration-ms="3862" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_new_list_with_rules_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.CreateNewListWithRulesTest@13e39c73]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.CreateNewListWithRulesTest -->
+      <class name="UseCaseTests.CreateTextNotificationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:UseCaseTests.CreateTextNotificationTest@64cd705f]" started-at="2021-10-28T02:59:20 EDT" name="setup" finished-at="2021-10-28T02:59:26 EDT" duration-ms="5625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="create_new_text_notification_test()[pri:0, instance:UseCaseTests.CreateTextNotificationTest@64cd705f]" started-at="2021-10-28T03:00:04 EDT" name="create_new_text_notification_test" finished-at="2021-10-28T03:00:05 EDT" duration-ms="588" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_new_text_notification_test -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:UseCaseTests.CreateTextNotificationTest@64cd705f]" started-at="2021-10-28T03:00:05 EDT" name="teardown" finished-at="2021-10-28T03:00:05 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- UseCaseTests.CreateTextNotificationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

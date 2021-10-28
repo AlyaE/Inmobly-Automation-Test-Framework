@@ -30,7 +30,7 @@ public class ContentScreensTest {
 	}
 	
 
-	@Test
+	/*@Test
 	public static void create_new_screen_test() {
 		driver.findElement(By.xpath(ContentScreens.button_new_screens)).click();
 		
@@ -42,8 +42,14 @@ public class ContentScreensTest {
 		driver.findElement(By.xpath(ContentScreens.button_new_screens_row_name_save)).click();
 		driver.findElement(By.xpath(ContentScreens.button_new_screens_new_row)).click();
 		driver.findElement(By.xpath(ContentScreens.button_new_screens_new_theme)).click();
-		ContentScreens.button_theme_minimize(driver, "Theme no. 1");
+		ContentScreens.button_theme_minimize_maximize(driver, "Theme no. 1");
 		
+	}*/
+	
+	@Test
+	public static void find_and_edit_screen_test() {
+		ContentScreens.button_view_screen(driver, "Regression", "123");
+		ContentScreens.button_view_row(driver, "Shelf portrait", "row-3");
 	}
 	
 	@AfterSuite

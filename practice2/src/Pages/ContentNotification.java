@@ -22,51 +22,36 @@ private static WebElement element = null;
 		assertEquals(msg, "Inmobly App");
 	}
 	
-	public static WebElement menubutton_content(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"contentMenu\"]/a"));
-		return element;
-	}
-	
-	public static WebElement menubutton_notification(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"contentMenu\"]/ul/li[8]/a"));
-		return element;
-	}
+	public static String menubutton_content = "//*[@id=\"contentMenu\"]/a";
+	public static String menubutton_notification = "//*[@id=\"contentMenu\"]/ul/li[8]/a";
+
 	
 	//Text Notification functions
-	public static WebElement button_text_notification(WebDriver driver) {
-		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/ng-component/div/div[2]/div/div/ul/li[2]/a"));
-		return element;
-	}
+	public static String button_text_notification = "/html/body/app-root/div/div/div[2]/div/ng-component/div/div[2]/div/div/ul/li[2]/a";
+	public static String textbox_text_title = "//*[@id=\"textTitle\"]";
+	public static String textbox_text_description = "//*[@id=\"textDescription\"]";
+	public static String textbox_text_link = "//*[@id=\"textLink\"]";
+	public static String button_text_push = "//*[@id=\"Text-Notification\"]/form/div[2]/button";
 	
 	public static void dropdown_select_text_profile(WebDriver driver, String name) {
 		driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")).click();
 		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")));
 		selection.selectByVisibleText(name);	
+		driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")).click();
 	}
-	
-	public static WebElement text_box_text_title(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"textTitle\"]"));
-		return element;
-	}
-	
-	public static WebElement text_box_text_description(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"textDescription\"]"));
-		return element;
-	}
-	
-	public static WebElement text_box_text_link(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"textLink\"]"));
-		return element;
-	}
-	
-	public static WebElement button_text_push(WebDriver driver) {
-		element = driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[2]/button"));
-		return element;
-	}
+
 	
 	//Video Notification functions
-		public static WebElement button_video_notification(WebDriver driver) {
-			element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/ng-component/div/div[2]/div/div/ul/li[1]/a"));
-			return element;
-		}
+	public static String button_video_notification = "/html/body/app-root/div/div/div[2]/div/ng-component/div/div[2]/div/div/ul/li[1]/a";
+	public static String textbox_video_title = "//*[@id=\"videoTitle\"]";
+	public static String textbox_video_description = "//*[@id=\"videoDescription\"]";
+	public static String button_video_push = "//*[@id=\"Video-Notification\"]/form/div[2]/button";
+	
+	public static void dropdown_select_video_profile(WebDriver driver, String name) {
+		driver.findElement(By.xpath("//*[@id=\"Video-Notification\"]/form/div[1]/div[1]/div[1]/select")).click();
+		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"Video-Notification\"]/form/div[1]/div[1]/div[1]/select")));
+		selection.selectByVisibleText(name);	
+		driver.findElement(By.xpath("//*[@id=\"Video-Notification\"]/form/div[1]/div[1]/div[1]/select")).click();
+	}
+
 }

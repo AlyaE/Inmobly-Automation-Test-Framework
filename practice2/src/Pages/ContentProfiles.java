@@ -29,18 +29,24 @@ public class ContentProfiles {
 	public static String menubutton_profiles = "//*[@id=\"contentMenu\"]/ul/li[1]/a";
 	public static String button_new_profile = "/html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/button";
 	
-	public static void add_new_profile(WebDriver driver, String profile_default_name, String profile_name) {
+	public static void add_new_profile(WebDriver driver, String new_profile_name) {
 		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div"));
 		 List<WebElement> list = element.findElements(By.xpath("./child::*"));
 		 for(int i = 0; i < list.size(); i++) {
-			 if(list.get(i).findElement(By.tagName("div")).getText().equals(profile_default_name)) {
-				 
-				 driver.findElement(By.className("border ng-pristine ng-valid ng-touched")).click();
-				 driver.findElement(By.className("border ng-pristine ng-valid ng-touched")).clear();
-				 driver.findElement(By.className("border ng-pristine ng-valid ng-touched")).sendKeys(profile_name);
-				 //driver.findElement(By.className("btn btn-success btn-icon save-btn")).click();
+			 System.out.print(list.get(i).findElement(By.tagName("input")).getAttribute("value") +"\n");
+			 if(list.get(i).findElement(By.tagName("input")).getAttribute("value").contains("New Profile")) {	
+				 list.get(i).findElement(By.tagName("input")).click();
+				 list.get(i).findElement(By.tagName("input")).clear();
+				 list.get(i).findElement(By.tagName("input")).sendKeys(new_profile_name);
+				 //driver.findElement(By.xpath("/app-profile-detail/div[2]/div/div[2]/div[1]/input")).click();
+				 //driver.findElement(By.xpath("/app-profile-detail/div[2]/div/div[2]/div[1]/input")).clear();
+				 //driver.findElement(By.xpath("/app-profile-detail/div[2]/div/div[2]/div[1]/input")).sendKeys(new_profile_name);
+				 break;
 			 }
 		}
+	//	 /html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div/div[6]
+	//	 /html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div/div[7]
+	//	 /html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div/div[7]/app-profile-detail/div[2]/div/div[2]/div[1]/input
 	}
 	
 	public static void button_edit_profile(WebDriver driver, String profile_name) {
@@ -63,19 +69,18 @@ public class ContentProfiles {
 		}
 	}
 	
-	public static void button_cancel_edit_profile(WebDriver driver) {
+	public static void button_cancel_edit_profile(WebDriver driver, String profile_name) {
 		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div"));
 		 List<WebElement> list = element.findElements(By.xpath("./child::*"));
 		 for(int i = 0; i < list.size(); i++) {
-			 if(list.get(i).findElement(By.tagName("h5")).getText().equals("Profile")) {
-				 System.out.println(list.get(i).findElement(By.tagName("h5")).getText() + "\n");	
-				 list.get(i).findElement(By.className("heading-btn")).findElement(By.xpath("./button[1]")).click();
+			 if(list.get(i).findElement(By.tagName("input")).getAttribute("value").contains(profile_name)) {	
+				 element = list.get(i);
+				 element.findElement(By.xpath("./app-profile-detail/div[2]/div/div[1]/div/div/button[1]")).click();
+				 break;
 			 }
 		}
 	}
-//	/html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div/div[2]/app-profile-detail/div[1]/div/div[1]/h5
-//	/html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div/div[2]/app-profile-detail/div[1]/div/div[1]/div/div/button[1]
-	
+
 	public static void button_save_edit_profile(WebDriver driver) {
 		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-profiles/app-profile-list/div[1]/div[2]/div/div/div/div/div/div/div[2]/app-profile-detail/div[2]/div"));
 		 List<WebElement> list = element.findElements(By.xpath("./child::*"));
