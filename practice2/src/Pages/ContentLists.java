@@ -60,14 +60,7 @@ public class ContentLists {
 	public static String button_preset_list_name_save = "//*[@id=\"myModal\"]/div/div/div[3]/input";
 	
 	public static void button_view_preset_list(WebDriver driver, String list_name) {
-		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-list/div[1]/div[2]/div/div[1]/div[2]"));
-		
-
-		 System.out.print(element.findElement(By.xpath("//*[@id=\"356\"]/div/h6")).getText() + " first end\n");
-		 System.out.print(element.findElement(By.xpath("//*[@id=\"357\"]/div/h6")).getText() + " second end\n");
-		 System.out.print(element.findElement(By.xpath("//*[@id=\"358\"]/div/h6")).getText() + " third end\n");
-		 System.out.print(element.findElement(By.xpath("//*[@id=\"359\"]/div/h6")).getText() + " fourth end\n");
-		 
+		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-list/div[1]/div[2]/div/div[1]/div[2]"));	 
 		 if(element.findElement(By.xpath("//*[@id=\"356\"]/div/h6")).getText().contains(list_name)) 
 			 element.findElement(By.xpath("//*[@id=\"356\"]/div/div/div/button")).click();
 		 else if(element.findElement(By.xpath("//*[@id=\"357\"]/div/h6")).getText().contains(list_name))
@@ -75,11 +68,8 @@ public class ContentLists {
 		 else if(element.findElement(By.xpath("//*[@id=\"358\"]/div/h6")).getText().contains(list_name)) 
 			 element.findElement(By.xpath("//*[@id=\"358\"]/div/div/div/button")).click();
 		 else if(element.findElement(By.xpath("//*[@id=\"359\"]/div/h6")).getText().contains(list_name)) 
-			 element.findElement(By.xpath("//*[@id=\"359\"]/div/div/div/button")).click();
-
-			 
+			 element.findElement(By.xpath("//*[@id=\"359\"]/div/div/div/button")).click(); 
 	}
-	
 	
 	public static void button_delete_custom_list(WebDriver driver, String list_name) {
 		element = driver.findElement(By.xpath("//*[@id=\"rowContainer\"]"));
@@ -91,24 +81,44 @@ public class ContentLists {
 		}
 	}
 	
-	public static String button_view_custom_list_edit_xpath = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]/div/div/button[2]";
 	public static void button_view_custom_list_edit(WebDriver driver) {
 		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]"));
 		 List<WebElement> list = element.findElements(By.xpath("./child::*"));
 		 for(int i = 0; i < list.size(); i++) {
-			 if(list.get(i).findElement(By.xpath(button_view_custom_list_edit_xpath)).isDisplayed()) {
+			 System.out.print(list.get(i).findElement(By.tagName("h5")).getText() + " end text\n");
+			 if(list.get(i).findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]")).isDisplayed()) {
 				 System.out.print(" in if statement\n");
-				 driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]/div/div/button[2]"));
-				 new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]/div/div/button[2]")));
-				 driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
-				 element.sendKeys(Keys.ENTER);
+				 element = list.get(i).findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]"));
+				 element.findElement(By.xpath("./div/div/button[2]"));
+				 JavascriptExecutor js = (JavascriptExecutor)driver;
+				js.executeScript("arguments[0].click()", element);
 				break;
 			 }
 		}
 	}
-//	/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]
-//	/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]/div/div/button[2]
 	
+	public static void button_custom_list_edit_video_details(WebDriver driver, String video_name, String order, boolean delete) {
+		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]"));
+		 List<WebElement> list = element.findElements(By.xpath("./child::*"));
+		 for(int i = 0; i < list.size(); i++) {
+			 System.out.print(list.get(i).findElement(By.className("video-title text-bold")).getText() + " end text\n");
+			 if(list.get(i).findElement(By.className("video-title text-bold")).getText().contains(video_name)) {
+				 System.out.print(" in if statement\n");
+				 if(list.get(i).findElement(By.className("form-control")).getText().equals(order)){
+					 if(delete) {  
+						 list.get(i).findElement(By.className("btn bg-delete-button btn-icon")).click();
+					 }
+				 }
+				 else {
+					 list.get(i).findElement(By.className("form-control")).click();
+					 list.get(i).findElement(By.className("form-control")).clear();
+					 list.get(i).findElement(By.className("form-control")).sendKeys(order);
+					 list.get(i).findElement(By.className("form-control")).click();
+				 }
+				break;
+			 }
+		}
+	}
 	
 	//after clicking edit on list view page
 	public static String button_view_list_cancel = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[2]/div[1]/div/div/button[1]/img";

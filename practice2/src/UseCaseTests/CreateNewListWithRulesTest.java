@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import Pages.ContentLists;
 
 public class CreateNewListWithRulesTest {
-private static WebDriver driver = null;
+	private static WebDriver driver = null;
 	
 	@BeforeTest
 	public static void setup() {

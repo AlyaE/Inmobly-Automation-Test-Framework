@@ -32,7 +32,7 @@ public class ContentListTest {
 	}
 	
 	//creates then cancels adding list
-	/*@Test
+	@Test
 	public static void create_new_list_test() {
 		driver.findElement(By.xpath(ContentLists.button_new_list)).click();
 		driver.findElement(By.xpath(ContentLists.button_new_list_name)).click();
@@ -42,7 +42,7 @@ public class ContentListTest {
 		driver.findElement(By.xpath(ContentLists.textbox_new_list_name)).clear();
 		driver.findElement(By.xpath(ContentLists.textbox_new_list_name)).sendKeys("Alya List");
 		driver.findElement(By.xpath(ContentLists.button_new_list_save_name)).click();
-	}*/
+	}
 	
 	/*@Test
 	public static void create_new_list_with_rules_test() {
@@ -83,12 +83,12 @@ public class ContentListTest {
 		ContentLists.dropdown_select_rule_filter_type(driver, "Series");
 		ContentLists.dropdown_select_rule_series(driver, "SUITS");
 		driver.findElement(By.xpath(ContentLists.button_add_rule_save)).click();
-	}
+	}*/
 	
-	@Test
+	/*@Test
 	public static void create_new_list_with_videos_test() {
-		/*driver.findElement(By.xpath(ContentLists.button_new_list_add_video)).click();
-		ContentLists.dropdown_add_video_video_type(driver, "Video");
+		driver.findElement(By.xpath(ContentLists.button_new_list_add_video)).click();
+		/*ContentLists.dropdown_add_video_video_type(driver, "Video");
 		ContentLists.dropdown_add_video_keyword_type(driver, "Tag");
 		ContentLists.dropdown_add_video_select_category(driver, "business");
 		driver.findElement(By.xpath(ContentLists.textbox_add_video_keywords)).click();
@@ -103,7 +103,7 @@ public class ContentListTest {
 	}*/
 
 	
-	@Test
+	/*@Test
 	public static void find_list_test() {
 		ContentLists.button_view_preset_list(driver, "trending");
 		driver.findElement(By.xpath(ContentLists.textbox_preset_list_name)).click();
@@ -115,7 +115,7 @@ public class ContentListTest {
 		//ContentLists.button_view_custom_list(driver, "Feature");
 		//new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(ContentLists.button_view_custom_list_edit))));  
 		//ContentLists.button_view_custom_list_edit(driver);
-	}
+	}*/
 	
 	@AfterTest
 	public static void teardown() {

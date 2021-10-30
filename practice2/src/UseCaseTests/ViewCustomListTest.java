@@ -29,6 +29,7 @@ public class ViewCustomListTest {
 	@Test
 	public static void find_list_test() {
 		ContentLists.button_view_custom_list(driver, "Feature");
+		ContentLists.button_view_custom_list_edit(driver);
 	}
 	
 	
