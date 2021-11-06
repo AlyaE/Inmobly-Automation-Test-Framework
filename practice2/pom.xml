@@ -1,0 +1,61 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>practice2</groupId>
+  <artifactId>practice2</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>16</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <properties>
+  <selenium.version>2.53.1</selenium.version>
+  <testng.version>6.9.10</testng.version>
+ </properties>
+
+ <dependencies>
+  <dependency>
+   <groupId>org.seleniumhq.selenium</groupId>
+   <artifactId>selenium-java</artifactId>
+   <version>${selenium.version}</version>
+  </dependency>
+  <dependency>
+   <groupId>org.testng</groupId>
+   <artifactId>testng</artifactId>
+   <version>${testng.version}</version>
+   <scope>test</scope>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+  <dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>7.0.0</version>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
+  <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>1.2.6</version>
+    <type>pom</type>
+    <scope>test</scope>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-picocontainer -->
+  <dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-picocontainer</artifactId>
+    <version>1.2.6</version>
+    <type>pom</type>
+    <scope>test</scope>
+  </dependency>
+
+  
+ </dependencies>
+</project>
