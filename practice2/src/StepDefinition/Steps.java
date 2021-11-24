@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import Pages.DashboardLogin;
 import io.cucumber.java.Before;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,8 +33,8 @@ public class Steps {
 	    throw new io.cucumber.java.PendingException();
 	}
 	
-	@When("I am logged in as {string} with the password {string}")
-	public void aNewUser(String user, String password, Self self) {
+	@When("^I am logged in as \"([^\"]*)\" with the password \"([^\"]*)\"$")
+	public void i_am_logged_in_as_with_the_password(String arg1, String arg2) throws Throwable {
 		System.out.println("beginning of func");
 		self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
 		self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).sendKeys("inmobly-admin");
@@ -44,10 +45,9 @@ public class Steps {
 		self.driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		String msg = self.driver.findElement(By.xpath(DashboardLogin.button_inmobly_app)).getText();
 		assertEquals(msg, "Inmobly App");
+	    throw new PendingException();
+	}
         
-    }
-        
-
 	
     @When("^Enter the Username and Password$")
     public void enter_the_Username_and_Password() throws Throwable

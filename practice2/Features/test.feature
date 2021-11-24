@@ -16,6 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
+
 @launchDashboard @test
 Feature: Sample Test
 
