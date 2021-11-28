@@ -33,10 +33,14 @@ public class test {
 	    throw new io.cucumber.java.PendingException();
 	}
 	
+	/*
+    When I am logged in as "inmobly-admin" with the password "support123456"
+    Then I validate the login attempt*/
+	
 	@When("^I am logged in as \"([^\"]*)\" with the password \"([^\"]*)\"$")
 	public void i_am_logged_in_as_with_the_password(String arg1, String arg2) throws Throwable {
 		System.out.println("beginning of func");
-		self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
+		/*self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
 		self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).sendKeys(arg1);
 		self.driver.findElement(By.xpath(DashboardLogin.testbox_password)).click();
 		self.driver.findElement(By.xpath(DashboardLogin.testbox_password)).sendKeys(arg2);
@@ -44,7 +48,7 @@ public class test {
 		System.out.println("before assert");
 		self.driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		String msg = self.driver.findElement(By.xpath(DashboardLogin.button_inmobly_app)).getText();
-		assertEquals(msg, "Inmobly App");
+		assertEquals(msg, "Inmobly App");*/
 	    throw new PendingException();
 	}
         
@@ -63,7 +67,13 @@ public class test {
     
     @Then("^I validate the login attempt$")
     public void i_validate_the_outcomes() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    	System.out.println("This step click on the Reset button.");
+        throw new PendingException();
+    }
+    
+    @When("^I test cucumber works$")
+    public void i_test_cucumber_works() throws Throwable {
+    	System.out.println("it works!");
         throw new PendingException();
     }
 
