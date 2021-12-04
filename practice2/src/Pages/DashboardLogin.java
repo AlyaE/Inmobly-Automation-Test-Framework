@@ -8,7 +8,7 @@ public class DashboardLogin {
 	
 	private static WebElement element = null;
 	
-	public static String textbox_uername = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[1]/input";
+	public static String textbox_username = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[1]/input";
 	public static String testbox_password = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[2]/input";
 	public static String button_signin = "/html/body/app-root/div/div/div/div/ng-component/div/div/form/div[3]/button";
 	

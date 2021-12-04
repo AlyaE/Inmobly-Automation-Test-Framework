@@ -1,4 +1,4 @@
-@launchDashboard @test
+@test
 Feature: Sample Test
 
   @test1
@@ -6,4 +6,3 @@ Feature: Sample Test
     When I am logged in as "inmobly-admin" with the password "support123456"
     Then I validate the login attempt
     
-   

@@ -15,8 +15,8 @@ public class ContentScreens {
 private static WebElement element = null;
 	
 	public static void login(WebDriver driver) {
-		driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
-		driver.findElement(By.xpath(DashboardLogin.textbox_uername)).sendKeys("inmobly-admin");
+		driver.findElement(By.xpath(DashboardLogin.textbox_username)).click();
+		driver.findElement(By.xpath(DashboardLogin.textbox_username)).sendKeys("inmobly-admin");
 		driver.findElement(By.xpath(DashboardLogin.testbox_password)).click();
 		driver.findElement(By.xpath(DashboardLogin.testbox_password)).sendKeys("support123456");
 		driver.findElement(By.xpath(DashboardLogin.button_signin)).click();

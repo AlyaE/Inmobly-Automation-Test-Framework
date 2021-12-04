@@ -2,6 +2,7 @@ package StepDefinition;
 
 import static org.testng.Assert.assertEquals;
 
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -16,21 +17,15 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import UseCaseTests.DasboardLoginTest;
+import Pages.DashboardLogin;
+import Pages.ContentMenu;
+import Utility.Self;
 
-public class test {
+public class test{
 	private Self self;
 	
 	public test(Self self) {
 		this.self = self;
-	}
-	
-	@Before("@launchDashboard")
-	public void i_launch_the_dashboard_in_chrome() {
-		self.driver = new ChromeDriver();
-		self.driver.manage().window().maximize();
-		self.driver.get("https://ott.bolt-play.com/login");
-	    throw new io.cucumber.java.PendingException();
 	}
 	
 	/*
@@ -39,41 +34,25 @@ public class test {
 	
 	@When("^I am logged in as \"([^\"]*)\" with the password \"([^\"]*)\"$")
 	public void i_am_logged_in_as_with_the_password(String arg1, String arg2) throws Throwable {
-		System.out.println("beginning of func");
-		self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
-		self.driver.findElement(By.xpath(DashboardLogin.textbox_uername)).sendKeys(arg1);
+		System.out.println("####beginning of func");
+		self.driver.findElement(By.xpath(DashboardLogin.textbox_username)).click();
+		self.driver.findElement(By.xpath(DashboardLogin.textbox_username)).sendKeys(arg1);
 		self.driver.findElement(By.xpath(DashboardLogin.testbox_password)).click();
 		self.driver.findElement(By.xpath(DashboardLogin.testbox_password)).sendKeys(arg2);
 		self.driver.findElement(By.xpath(DashboardLogin.button_signin)).click();
-		System.out.println("before assert");
+		System.out.println("####before assert");
 		self.driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
 		String msg = self.driver.findElement(By.xpath(DashboardLogin.button_inmobly_app)).getText();
 		assertEquals(msg, "Inmobly App");
 	    throw new PendingException();
 	}
-        
-	
-    @When("^Enter the Username and Password$")
-    public void enter_the_Username_and_Password() throws Throwable
-    {
-       System.out.println("This step enter the Username and Password on the login page.");
-    }
 
-    @Then("^Reset the credential$")
-    public void Reset_the_credential() throws Throwable 							
-    {
-        System.out.println("This step click on the Reset button.");
-    }
     
     @Then("^I validate the login attempt$")
     public void i_validate_the_outcomes() throws Throwable {
-    	System.out.println("This step click on the Reset button.");
-        throw new PendingException();
-    }
-    
-    @When("^I test cucumber works$")
-    public void i_test_cucumber_works() throws Throwable {
-    	System.out.println("it works!");
+    	System.out.println("########## This step validates the automation logged in properly #########");
+    	self.driver.findElement(By.xpath(ContentMenu.menubutton_content)).click();
+    	self.driver.findElement(By.xpath(ContentMenu.menubutton_menupage)).click();
         throw new PendingException();
     }
 

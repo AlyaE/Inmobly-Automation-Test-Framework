@@ -1,6 +1,7 @@
 package UseCaseTests;
 import static org.testng.Assert.assertEquals;
 
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -26,8 +27,8 @@ public class DasboardLoginTest {
 	
 	@Test
 	public static void Login() {
-		driver.findElement(By.xpath(DashboardLogin.textbox_uername)).click();
-		driver.findElement(By.xpath(DashboardLogin.textbox_uername)).sendKeys("inmobly-admin");
+		driver.findElement(By.xpath(DashboardLogin.textbox_username)).click();
+		driver.findElement(By.xpath(DashboardLogin.textbox_username)).sendKeys("inmobly-admin");
 		driver.findElement(By.xpath(DashboardLogin.testbox_password)).click();
 		driver.findElement(By.xpath(DashboardLogin.testbox_password)).sendKeys("support123456");
 		driver.findElement(By.xpath(DashboardLogin.button_signin)).click();
