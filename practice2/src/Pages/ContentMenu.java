@@ -62,6 +62,28 @@ private static WebElement element = null;
 		}
 	}
 	
+	public static boolean validate_template_menu(WebDriver driver, String menu_name, String screen_name) {
+		boolean element_exists = true;
+		int i = 0;
+		while (element_exists) {
+			if(element_exists) {
+				if(driver.findElement(By.xpath("//*[@id=\""+i+"\"]/div/div[1]/div[1]/h4")).getText().contains(menu_name)) {
+					element_exists = true;
+					break;
+				}
+				else 
+					element_exists = driver.findElement(By.xpath("//*[@id=\""+(i+1)+"\"]/div/div[1]/div[2]/button[1]")).isDisplayed();
+					i++;
+			} 
+			else {
+				System.out.print("ERROR: Menu Not Found: "+menu_name+"\n");
+				element_exists = false;
+				break;
+			}
+		}
+		return element_exists;
+	}
+	
 	public static void edit_template_menu(WebDriver driver, String current_menu_name, String new_menu_name, String screen_name) {
 		boolean element_exists = true;
 		int i = 0;
@@ -100,6 +122,28 @@ private static WebElement element = null;
 				break;
 			}
 		}
+	}
+	
+	public static boolean validate_parent_template_menu(WebDriver driver, String menu_name) {
+		boolean element_exists = true;
+		int i = 0;
+		while (element_exists) {
+			if(element_exists) {
+				if(driver.findElement(By.xpath("//*[@id=\""+i+"\"]/div/div[1]/div[1]/h4")).getText().contains(menu_name)) {
+					element_exists = true;
+					break;
+				}
+				else 
+					element_exists = driver.findElement(By.xpath("//*[@id=\""+(i+1)+"\"]/div/div[1]/div[2]/button[1]")).isDisplayed();
+					i++;
+			} 
+			else {
+				System.out.print("ERROR: Menu Not Found: "+menu_name+"\n");
+				element_exists = false;
+				break;
+			}
+		}
+		return element_exists;
 	}
 	
 	public static void edit_parent_template_menu(WebDriver driver, String current_menu_name, String new_menu_name) {

@@ -47,18 +47,15 @@ public class test extends Self{
 		self.driver.findElement(By.xpath(DashboardLogin.testbox_password)).click();
 		self.driver.findElement(By.xpath(DashboardLogin.testbox_password)).sendKeys(arg2);
 		self.driver.findElement(By.xpath(DashboardLogin.button_signin)).click();
-		System.out.println("####before assert");
-		self.driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
-		String msg = self.driver.findElement(By.xpath(DashboardLogin.button_inmobly_app)).getText();
-		assertEquals(msg, "Inmobly App");
 	}
 
     
     @Then("^I validate the login attempt$")
     public void i_validate_the_outcomes() {
-    	System.out.println("########## This step validates the automation logged in properly #########");
-		self.driver.findElement(By.xpath(ContentMenu.menubutton_content)).click();
-		self.driver.findElement(By.xpath(ContentMenu.menubutton_menupage)).click();
+    	System.out.println("####proof of validation of login step");
+    	self.driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+		String msg = self.driver.findElement(By.xpath(DashboardLogin.button_inmobly_app)).getText();
+		assertEquals(msg, "Inmobly App");
     }
 
 }

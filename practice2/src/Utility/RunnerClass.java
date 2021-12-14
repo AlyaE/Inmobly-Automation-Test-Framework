@@ -7,7 +7,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 
 @CucumberOptions(
-		features = "classpath:Features/test.feature",
+		features = "classpath:Features/DashboardContent.feature",
 		glue = {"StepDefinition"},
 		monochrome = true,
 		plugin = { "pretty","json:target/cucumberreports.json" }

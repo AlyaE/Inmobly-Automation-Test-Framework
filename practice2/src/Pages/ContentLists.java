@@ -30,6 +30,8 @@ public class ContentLists {
 	}
 	public static String menubutton_content = "//*[@id=\"contentMenu\"]/a";
 	public static String menubutton_lists = "//*[@id=\"contentMenu\"]/ul/li[2]/a";
+	public static String text_list_name = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[1]/div/div[1]/div/h4";
+	public static String text_validate_list_name = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[1]/div/div[1]/div/h4/span";
 	
 	//New List functions
 	public static String button_new_list = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-list/div[1]/button";
@@ -58,17 +60,24 @@ public class ContentLists {
 	public static String textbox_preset_list_name = "//*[@id=\"myModal\"]/div/div/div[2]/input";
 	public static String button_preset_list_name_cancel = "//*[@id=\"myModal\"]/div/div/div[3]/button";
 	public static String button_preset_list_name_save = "//*[@id=\"myModal\"]/div/div/div[3]/input";
+	public static String button_edit_custom_list = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[1]/div[1]/div/div/button[2]/img";
 	
-	public static void button_view_preset_list(WebDriver driver, String list_name) {
+	public static boolean button_view_preset_list(WebDriver driver, String list_name) {
 		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-list/div[1]/div[2]/div/div[1]/div[2]"));	 
-		 if(element.findElement(By.xpath("//*[@id=\"356\"]/div/h6")).getText().contains(list_name)) 
+		 if(element.findElement(By.xpath("//*[@id=\"356\"]/div/h6")).getText().contains(list_name)) {
 			 element.findElement(By.xpath("//*[@id=\"356\"]/div/div/div/button")).click();
-		 else if(element.findElement(By.xpath("//*[@id=\"357\"]/div/h6")).getText().contains(list_name))
+		 	return true;}
+		 else if(element.findElement(By.xpath("//*[@id=\"357\"]/div/h6")).getText().contains(list_name)) {
 			 element.findElement(By.xpath("//*[@id=\"357\"]/div/div/div/button")).click();
-		 else if(element.findElement(By.xpath("//*[@id=\"358\"]/div/h6")).getText().contains(list_name)) 
+		 	return true;}
+		 else if(element.findElement(By.xpath("//*[@id=\"358\"]/div/h6")).getText().contains(list_name)) {
 			 element.findElement(By.xpath("//*[@id=\"358\"]/div/div/div/button")).click();
-		 else if(element.findElement(By.xpath("//*[@id=\"359\"]/div/h6")).getText().contains(list_name)) 
+		 	return true;}
+		 else if(element.findElement(By.xpath("//*[@id=\"359\"]/div/h6")).getText().contains(list_name)) {
 			 element.findElement(By.xpath("//*[@id=\"359\"]/div/div/div/button")).click(); 
+		 	return true;}
+		 else
+			 return false;
 	}
 	
 	public static void button_delete_custom_list(WebDriver driver, String list_name) {
@@ -182,10 +191,15 @@ public class ContentLists {
 	}
 	
 	public static void button_select_video_from_list(WebDriver driver, String video_name) {
-		element = driver.findElement(By.xpath("//*[@id=\"modal_default\"]/div/div/div[2]/form/div[3]/div"));
-		 //List<WebElement> list = element.findElements(By.xpath("./child::*"));
+		element = driver.findElement(By.xpath("//*[@id=\"modal_default\"]/div/div/div[2]/form/div[3]/div/table"));
+		System.out.println(element.findElement(By.tagName("tbody")).findElement(By.xpath("./tr[1]")));
+		element = element.findElement(By.tagName("tbody")).findElement(By.xpath("./tr[1]"));
+		element.findElement(By.tagName("td")).click();
 		
-		List<WebElement> rows = element.findElements(By.tagName("tr"));
+		
+		//*[@id="modal_default"]/div/div/div[2]/form/div[3]/div/table/tbody/tr[1]/td[3]
+
+		/*List<WebElement> rows = element.findElements(By.tagName("tr"));
 		 for(int i = 0; i < rows.size(); i++) {
 			 System.out.println("Row size: " + rows.size());
 			 List<WebElement> collumns = element.findElements(By.tagName("td"));
@@ -194,13 +208,16 @@ public class ContentLists {
 				 System.out.println("Collumn size: " + collumns.size());
 				 System.out.println("The cell value is: " + value);
 			 }
-		}
+		}*/
 	}
+	
 
 	//Add Rule functions
 	public static String button_new_list_add_rule = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[2]/div/button[2]";
 	public static String textbox_add_rule_order = "//*[@id=\"ruleModal\"]/div/div/div[2]/div[1]/div[4]/input";
+	public static String textbox_get_rule_order = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[2]/div[2]/div[1]/div/div/div/div/div[1]/div[3]/input";
 	public static String textbox_add_rule_count = "//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[5]/input";
+	public static String textbox_get_rule_count = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[2]/div[2]/div[1]/div/div/div/div/div[2]/div[3]/div[2]/input";
 	public static String textbox_add_rule_keywords = "//*[@id=\"rule_keyword_input\"]";
 	public static String button_add_rule_cancel = "//*[@id=\"ruleModal\"]/div/div/div[3]/div/button[1]";
 	public static String button_add_rule_save = "//*[@id=\"ruleModal\"]/div/div/div[3]/div/button[2]";
@@ -226,13 +243,27 @@ public class ContentLists {
 	public static void dropdown_select_rule_category(WebDriver driver, String name) {
 		driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[1]/div[3]/span/span[1]/span")).click();
 		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[1]/div[3]/select")));
-		selection.selectByVisibleText(name);	
+		selection.selectByVisibleText(name);
+		driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[1]/div[3]/span/span[1]/span")).click();
+	}
+	
+	public static String dropdown_get_rule_category(WebDriver driver) {
+		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[1]/div[3]/select")));
+		String str = selection.getFirstSelectedOption().getText();
+		return str;
 	}
 	
 	public static void dropdown_select_rule_sort_by(WebDriver driver, String name) {
 		driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[1]/select")).click();
 		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[1]/select")));
 		selection.selectByVisibleText(name);	
+		driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[1]/select")).click();
+	}
+	
+	public static String dropdown_get_rule_sort_by(WebDriver driver) {
+		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[1]/select")));
+		String str = selection.getFirstSelectedOption().getText();
+		return str;
 	}
 	
 	public static void dropdown_select_rule_direction(WebDriver driver, String name) {
@@ -241,10 +272,24 @@ public class ContentLists {
 		selection.selectByVisibleText(name);	
 	}
 	
+	public static String dropdown_get_rule_direction(WebDriver driver) {
+		Select selection = new Select(driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[2]/div[2]/div[1]/div/div/div/div/div[2]/div[2]/div[2]/select")));
+		String str = selection.getFirstSelectedOption().getText();
+		return str;	
+	}
+	
 	public static void dropdown_select_rule_min_year(WebDriver driver, String name) {
 		driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[4]/select")).click();
 		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[4]/select")));
 		selection.selectByVisibleText(name);
+	}
+	
+	public static String textbox_get_min_year = "/html/body/app-root/div/div/div[2]/div/app-lists/app-list-detail/div[1]/div[3]/div/div[2]/div[2]/div[1]/div/div/div/div/div[2]/div[3]/div[1]/input";
+	
+	public static String dropdown_get_rule_min_year(WebDriver driver) {
+		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"ruleModal\"]/div/div/div[2]/div[2]/div[4]/select")));
+		String str = selection.getFirstSelectedOption().getText();
+		return str;	
 	}
 		
 }

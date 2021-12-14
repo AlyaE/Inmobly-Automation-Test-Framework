@@ -47,7 +47,6 @@ private static WebElement element = null;
 	public static void button_view_screen(WebDriver driver, String screen_name, String ID) {
 		element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-templates/app-template-list/div/div[2]/div/div"));
 		if(element.findElement(By.xpath("//*[@id=\""+ID+"\"]")).getText().contains(screen_name)) {
-			//System.out.print(driver.findElement(By.xpath("//*[@id=\""+ID+"\"]")).getText() +" End OF Text\n");
 			element = driver.findElement(By.xpath("//*[@id=\""+ID+"\"]"));
 			element.findElement(By.className("heading-btn")).findElement(By.xpath("./button[2]")).click();
 		}

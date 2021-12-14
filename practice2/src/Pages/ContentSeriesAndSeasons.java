@@ -2,6 +2,7 @@ package Pages;
 
 import static org.testng.Assert.assertEquals;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -32,4 +33,15 @@ private static WebElement element = null;
 	public static String textbox_new_series_description = "//*[@id=\"Details\"]/form/fieldset[1]/div[3]/div/textarea";
 	public static String textbox_new_series_tag = "//*[@id=\"Details\"]/form/fieldset[1]/div[4]/div/div/input";
 	public static String button_new_series_save = "//*[@id=\"Details\"]/div/div/button[2]";
+	
+	public static void button_view_series(WebDriver driver, String series_name) {
+		WebElement bodyElement = driver.findElement(By.id("/html/body/app-root/div/div/div[2]/div/app-series-list/div[2]/div"));  
+		List divElements = bodyElement.findElements(By.className("div"));
+		for(int i = 0; i<(divElements.size()-1) ; i++){
+			if(driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-series-list/div[2]/div/div["+i+"]/div/div/div[2]/h5/b")).getText().contains(series_name)) {
+				element = driver.findElement(By.xpath("/html/body/app-root/div/div/div[2]/div/app-series-list/div[2]/div/div["+i+"]/div"));
+				element.findElement(By.xpath("./button[2]")).click();
+			}
+		}  
+	}
 }

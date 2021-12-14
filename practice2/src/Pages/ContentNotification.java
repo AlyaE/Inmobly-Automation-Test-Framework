@@ -36,8 +36,13 @@ private static WebElement element = null;
 	public static void dropdown_select_text_profile(WebDriver driver, String name) {
 		driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")).click();
 		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")));
-		selection.selectByVisibleText(name);	
-		driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")).click();
+		selection.selectByVisibleText(name);
+	}
+	
+	public static String dropdown_get_text_profile(WebDriver driver, String name) {
+		Select selection = new Select(driver.findElement(By.xpath("//*[@id=\"Text-Notification\"]/form/div[1]/div/div[1]/select")));
+		String profileName = selection.getFirstSelectedOption().getText();
+		return profileName;
 	}
 
 	
